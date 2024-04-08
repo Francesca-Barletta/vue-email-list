@@ -17,8 +17,8 @@
         <button @click="fetchEmail(n)">Genera</button>
         <div class="container">
             
-            <ul>
-                <li v-for="email in emails" v-if="emails.length == n">{{ email }}</li>
+            <ul v-if="emails.length == n">
+                <li v-for="email in emails">{{ email }}</li>
             </ul>
     
         </div>
