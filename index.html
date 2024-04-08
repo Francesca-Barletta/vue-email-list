@@ -14,11 +14,11 @@
 <body>
     <div id="app">
         <h1>Email list</h1>
-        <button @click="fetchEmail(10)">Genera</button>
+        <button @click="fetchEmail(n)">Genera</button>
         <div class="container">
             
             <ul>
-                <li v-for="email in newEmails">{{ email }}</li>
+                <li v-for="email in emails" v-if="emails.length == n">{{ email }}</li>
             </ul>
     
         </div>

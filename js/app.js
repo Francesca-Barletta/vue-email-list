@@ -7,7 +7,8 @@ const { createApp } = Vue
       return {
         message: 'Hello Vue!',
         emails: [],
-        newEmails: []
+        newEmails: [],
+        n: 10
       }
     },
     methods: {
@@ -19,21 +20,22 @@ const { createApp } = Vue
                         console.log(response.data.response);
                         this.emails.push(response.data.response);
                         console.log(this.emails);
-                    })      
+                        console.log(this.emails.length);
+                    })
+                    
             } 
-            setTimeout(()=> {
-                this.newEmails = this.emails;
-                this.emails = [];
-                console.log(this.newEmails);
-            } ,1000)
+            this.emails = [];
         },
         
     },
     created() {
        
     },
+    computed: {
+
+    },
     mounted(){
-        // this.fetchEmail(10)
+       
     },
     updated(){
         
