@@ -6,7 +6,8 @@ const { createApp } = Vue
     data() {
       return {
         message: 'Hello Vue!',
-        emails: []
+        emails: [],
+        newEmails: []
       }
     },
     methods: {
@@ -15,14 +16,26 @@ const { createApp } = Vue
                 axios
                     .get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then((response) => {
-                        console.log(response.data.response)
-                        this.emails.push(response.data.response)
-                        console.log(this.emails)
-                    })
-            }
-        }
+                        console.log(response.data.response);
+                        this.emails.push(response.data.response);
+                        console.log(this.emails);
+                    })      
+            } 
+            setTimeout(()=> {
+                this.newEmails = this.emails;
+                this.emails = [];
+                console.log(this.newEmails);
+            } ,1000)
+        },
+        
     },
     created() {
-        this.fetchEmail(10)
+       
+    },
+    mounted(){
+        // this.fetchEmail(10)
+    },
+    updated(){
+        
     }
   }).mount('#app')

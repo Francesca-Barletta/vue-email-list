@@ -11,15 +11,15 @@
 </head>
 
 <body>
-<div id="app">
-    {{ message }}
-<p>Email list:</p>
-<ul>
-    <li
-    v-for="email in emails">{{ email }}</li>
-</ul>
+    <div id="app">
+        {{ message }}
+        <p>Email list</p>
+        <button @click="fetchEmail(10)">Genera</button>
+        <ul>
+            <li v-for="email in newEmails">{{ email }}</li>
+        </ul>
 
-</div>
+    </div>
     <script>
 
     </script>
